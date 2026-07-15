@@ -1,0 +1,168 @@
+# Labeller-specific configuration for multilabel classification.
+# Extends a base config (e.g. androcles) and adds labelling options.
+extends: androcles_chat_dataset.yaml
+
+labelling:
+  per_topic: true
+  # One positive example per label (required); additional examples below.
+  samples:
+    # --- One example per label (all 21 topics) ---
+    - message: "How do I fix this TypeError in my Python script?"
+      labels: { Coding: 1 }
+    - message: "Generate a watercolor painting of a sunset over the ocean"
+      labels: { "Image Generation": 1 }
+    - message: "Translate this paragraph from French to English"
+      labels: { Translation: 1 }
+    - message: "Rispondi in italiano per favore"
+      labels: { Multilingualism: 1 }
+    - message: "Can you summarise this 5000-word article for me?"
+      labels: { Summarisation: 1 }
+    - message: "Help me write a professional cover letter for a data analyst role"
+      labels: { "Structured Writing": 1 }
+    - message: "What's the best VPN for privacy in 2024?"
+      labels: { Recommendation: 1 }
+    - message: "Should I choose React or Vue for my new project?"
+      labels: { Choice: 1 }
+    - message: "Is it true that the Great Wall is visible from space?"
+      labels: { "Fact Checking": 1 }
+    - message: "How do I use Leo's thinking mode?"
+      labels: { Brave: 1 }
+    - message: "What's 15% of 80?"
+      labels: { "Math / Calculations": 1 }
+    - message: "Can you analyse this CSV and show me the trends?"
+      labels: { "Data Analysis": 1 }
+    - message: "Draw a flowchart for our customer onboarding process"
+      labels: { Diagrams: 1 }
+    - message: "Plan a 5-day trip to Tokyo for next month"
+      labels: { "Travel Planning": 1 }
+    - message: "Walk me through the pros and cons of each option step by step"
+      labels: { Thinking: 1 }
+    - message: "What's the weather in London tomorrow?"
+      labels: { Weather: 1 }
+    - message: "What's the EUR to USD exchange rate right now?"
+      labels: { Finance: 1 }
+    - message: "What are the latest headlines about climate summit?"
+      labels: { News: 1 }
+    - message: "What was the score of the Liverpool vs Chelsea match?"
+      labels: { Sports: 1 }
+    - message: "Quick answer please - what year did WW2 end?"
+      labels: { "Time-critical": 1 }
+    - message: "Click the submit button on this form for me"
+      labels: { Browser: 1 }
+    # --- Additional examples ---
+    - message: "escribe una carta de renuncia"
+      labels:
+        Multilingualism: 1
+        "Structured Writing": 1
+    - message: "Roleplay as another human"
+      labels: {}
+    - message: "How do I connect my printer to the network?"
+      labels: {}
+    - message: "Debug this JavaScript function that returns undefined"
+      labels:
+        Coding: 1
+    - message: "Create an image of a cat wearing a top hat"
+      labels:
+        "Image Generation": 1
+    - message: "Can you translate 'hello world' into Japanese?"
+      labels:
+        Translation: 1
+    - message: "Write this email in Spanish"
+      labels:
+        Multilingualism: 1
+        "Structured Writing": 1
+    - message: "Give me a brief summary of the key points"
+      labels:
+        Summarisation: 1
+    - message: "Draft an apology email to my professor"
+      labels:
+        "Structured Writing": 1
+    - message: "Which laptop would you recommend for video editing?"
+      labels:
+        Recommendation: 1
+    - message: "Python or JavaScript for a beginner?"
+      labels:
+        Choice: 1
+    - message: "Can you verify if that statistic about voter turnout is accurate?"
+      labels:
+        "Fact Checking": 1
+    - message: "What features does Brave Search have?"
+      labels:
+        Brave: 1
+    - message: "If I have 3 apples and buy 7 more, how many do I have?"
+      labels:
+        "Math / Calculations": 1
+    - message: "Here's my JSON data - can you find the outliers?"
+      labels:
+        "Data Analysis": 1
+    - message: "Make a Venn diagram showing overlap between these three concepts"
+      labels:
+        Diagrams: 1
+    - message: "Suggest a 3-day itinerary for Paris"
+      labels:
+        "Travel Planning": 1
+    - message: "Think through the ethical implications of this decision"
+      labels:
+        Thinking: 1
+    - message: "Will it rain in Dublin on Saturday?"
+      labels:
+        Weather: 1
+    - message: "What's the current Bitcoin price?"
+      labels:
+        Finance: 1
+    - message: "Any recent news about the AI regulation bill?"
+      labels:
+        News: 1
+    - message: "Who won the Premier League last season?"
+      labels:
+        Sports: 1
+    - message: "Just need a yes or no - is Marseille in France?"
+      labels:
+        "Time-critical": 1
+    - message: "Scroll down and click the link that says 'Download'"
+      labels:
+        Browser: 1
+    - message: "you said 'our species' - what did you mean?"
+      labels: {}
+    - message: "How can I teach you something new?"
+      labels: {}
+    - message: "can you chat as NAME_1"
+      labels: {}
+    - message: "I checked that link and the article is different - stick to the truth"
+      labels:
+        "Fact Checking": 1
+    - message: "what is the past tense of the following words: sing, feed, keep"
+      labels:
+        "Math / Calculations": 1
+    - message: "Kannst du mir eine lustige Geschichte schreiben?"
+      labels:
+        Multilingualism: 1
+        "Structured Writing": 1
+    - message: "Write a formal complaint letter to my landlord"
+      labels:
+        "Structured Writing": 1
+    - message: "Compare these two options and help me decide"
+      labels:
+        Choice: 1
+        Thinking: 1
+    # Long statements/essays - user expressing a viewpoint, not requesting a task
+    - message: "Capitalism causes inequality and environmental damage. Economic elites benefit while workers suffer. Healthcare and education serve the economy not people. The system is designed to exploit."
+      labels: {}
+    - message: "In the story when you say the characters are making love, what do you mean?"
+      labels: {}
+    # Meta questions about AI capability - no topic fits
+    - message: "How can I teach you something new (e.g. something that appeared after September 2021)? Do you remember our dialogues and use them for your learning?"
+      labels: {}
+    # Short clarification in English - NOT Multilingualism
+    - message: "you said 'our species'"
+      labels: {}
+    # Writing in another language = Multilingualism; making a statement/argument = NOT other topics
+    - message: "социальные и экологические последствия не представляют выгоды для экономических элит"
+      labels:
+        Multilingualism: 1
+
+rate_limiting:
+  llm_calls_per_minute: 300
+
+concurrency:
+  max_concurrent: 10

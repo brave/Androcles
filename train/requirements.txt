@@ -1,0 +1,14 @@
+torch>=2.10.0
+torchvision>=0.25.0
+setuptools
+# Recent transformers use np.ndarray[...] hints; needs NumPy with subscriptable ndarray (PEP typing)
+numpy>=1.24.0
+pandas
+# transformers imports PIL.Image.Resampling (Pillow >= 9.1); Ubuntu python3-pil is often older
+pillow>=9.1.0
+scikit-learn
+datasets
+accelerate
+hf-transfer
+evaluate
+transformers

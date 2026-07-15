@@ -1,0 +1,17 @@
+# Example config using AWS Bedrock instead of vLLM.
+# Replace models.vllm with models.bedrock to use Claude or other Bedrock models.
+# Requires AWS credentials in the environment (e.g. aws-vault, IAM role, or env vars).
+
+models:
+  bedrock:
+    model_id: "anthropic.claude-3-sonnet-20240229-v1:0"
+    region_name: "us-east-1"
+    max_tokens: 800
+    temperature: 0.0
+    # Increase if you see "Connection pool is full" warnings (default: 50)
+    # max_pool_connections: 100
+
+topics:
+  - "Coding"
+  - "Image Generation"
+  # ... add your topics

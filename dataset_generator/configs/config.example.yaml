@@ -1,0 +1,46 @@
+# Example config for dataset generation / labelling.
+# Copy and edit, or pass --config pointing at androcles_chat_dataset.yaml
+# after updating the models section for your environment.
+
+models:
+  vllm:
+    api_base: "http://localhost:8000/v1"
+    model: "Qwen/Qwen3-14B"
+    api_key: "EMPTY"
+    max_tokens: 800
+    temperature: 0.0
+    enable_thinking: false
+  mcp:
+    # Brave Search (or any search) MCP endpoint. Improves message diversity.
+    # If unavailable, generation still runs but search-backed enrichment is degraded.
+    server_url: "http://localhost:8080/mcp"
+
+topics:
+  - "Coding"
+  - "Image Generation"
+
+topic_contexts:
+  "Coding": "Programming help — writing, debugging, or explaining code."
+  "Image Generation": "User asks the LLM to generate or create an image."
+
+generation:
+  num_primary_topics: 1
+  num_topics: 2
+  messages_per_topic: 5
+  max_messages: null
+  continuous: false
+  resume: true
+
+concurrency:
+  max_concurrent: 5
+  max_concurrent_primary: 2
+
+rate_limiting:
+  llm_calls_per_minute: 60
+  search_calls_per_minute: 30
+
+output:
+  file: "example_run"
+
+logging:
+  verbose: false

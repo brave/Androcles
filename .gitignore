@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+.python-version
+
+# Training / pipeline artifacts
+runs/
+pipeline/runs/
+checkpoints/
+test_model/
+*.mlpackage/
+*.tflite
+
+# Data outputs
+*.csv
+*.safetensors
+!**/configs/**
+
+# Tests / notebooks
+.pytest_cache/
+.ipynb_checkpoints/
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+*.swp
+
+# Hugging Face / local caches
+.cache/
+huggingface/

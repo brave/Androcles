@@ -1,0 +1,24 @@
+# Active learning pipeline config for Androcles 2 (21-label taxonomy).
+# Paths are relative to the repository root unless absolute.
+
+# Canonical Androcles 2 generation config (topics + topic_contexts)
+base_generation_config: dataset_generator/configs/androcles_chat_dataset.yaml
+
+# Optional: labeller config with few-shot samples (recommended)
+# Pass via orchestrator / data_manager labelling steps as needed:
+#   dataset_generator/configs/labeller_config.yaml
+
+training:
+  base_model: answerdotai/ModernBERT-base
+  max_context_length: 1024
+  num_epochs: 5
+  test_size: 0.15  # Eval split (fixed after iteration 0)
+
+active_learning:
+  max_iterations: 6
+  min_iterations: 2
+  min_f1_threshold: 0.82
+  convergence_delta: 0.01
+  gap_fill_messages_per_topic: 150
+  top_k_gaps: 10
+  min_samples_threshold: 50

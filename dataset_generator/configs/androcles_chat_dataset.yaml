@@ -1,0 +1,73 @@
+models:
+  vllm:
+    # OpenAI-compatible endpoint (local vLLM, hosted API, etc.)
+    api_base: "http://localhost:8000/v1"
+    model: "Qwen/Qwen3-14B"
+    api_key: "EMPTY"
+    max_tokens: 800
+    temperature: 0.0
+    enable_thinking: false
+  mcp:
+    # Optional web-search MCP server URL (improves message diversity)
+    server_url: "http://localhost:8080/mcp"
+topics:
+  - "Coding"
+  - "Image Generation"
+  - "Translation"
+  - "Multilingualism"
+  - "Summarisation"
+  - "Structured Writing"
+  - "Recommendation"
+  - "Choice"
+  - "Fact Checking"
+  - "Brave"
+  - "Math / Calculations"
+  - "Data Analysis"
+  - "Diagrams"
+  - "Travel Planning"
+  - "Thinking"
+  - "Weather"
+  - "Finance"
+  - "News"
+  - "Sports"
+  - "Time-critical"
+  - "Browser"
+topic_contexts:
+  "Coding": "These are messages where the user is asking for help with any aspect of programming — writing code, debugging, explaining concepts, reviewing code, or running code. The user may ask for code in a specific language, or need help with an error message, or want to understand how a function works. The request should be about the act of coding or understanding code — not about tools or IDEs unless directly related to coding. The LLM's response would be to generate, explain, or fix code — not to recommend tools or explain how to use an editor."
+  "Image Generation": "These are messages where the user wants the LLM to generate or create images, the request is specifically for the LLM to generate an image. This should not involve showing the user how to generate the image or advice around building image generation models or tools. The request should ask for the LLM to generate types of images and the LLM's response would be to generate the requested image."
+  "Translation": "These are messages where the user is asking for text to be translated from one language to another. The user may specify the source and target languages, or may just provide text and ask for a translation. The request should be for the LLM to perform the translation — not to recommend translation tools or explain how to use a translation service. The LLM's response would be the translated text — not instructions or advice."
+  "Multilingualism": "These are messages where the user is writing in or asking for a response in a non-English language. The user may specify the language they want the response in, or may write in a non-English language and expect a response in the same language. The request should be for the LLM to respond in a specific language — not to recommend translation tools or explain language learning. The LLM's response would be in the requested language — not in English with a note about the language."
+  "Summarisation": "These are messages where the user wants a summary of something — an article, video, document, or piece of text. The user may provide the text or ask for a summary of a specific topic. The request should be for the LLM to summarise — not to recommend summarisation tools or explain how to summarise. The LLM's response would be the summary — not instructions or advice."
+  "Structured Writing": "These are messages where the user wants help writing something structured and polished — a cover letter, essay, email, report, blog post etc. The user may ask for a specific format or structure, or may ask for help with a specific section. The request should be for the LLM to write or help write — not to recommend writing tools or explain how to write. The LLM's response would be the written content — not instructions or advice."
+  "Recommendation": "These are messages where the user is asking for a recommendation — a product, service, tool, or option suited to their needs. The user may specify their needs or ask for the best option for a specific purpose. The request should be for the LLM to recommend — not to explain how to choose or recommend tools. The LLM's response would be the recommendation — not instructions or advice."
+  "Choice": "These are messages where the user is deciding between two or more specific options and wants help choosing. The user may list the options or ask for a comparison. The request should be for the LLM to help choose — not to explain how to choose or recommend tools. The LLM's response would be the choice — not instructions or advice."
+  "Fact Checking": "These are messages where the user wants to verify whether a claim, statement, or piece of information is true or false. The user may provide the claim or ask for verification of a specific statement. The request should be for the LLM to verify — not to recommend fact-checking tools or explain how to fact-check. The LLM's response would be the verification — not instructions or advice."
+  "Brave": "These are messages where the user is asking about Brave products — Brave Browser, Brave Search, Brave Rewards, Leo etc. The user may ask for help with a Brave product or want to know about a feature. The request should be for the LLM to provide information — not to recommend other products or explain how to use other products. The LLM's response would be the information — not instructions or advice."
+  "Math / Calculations": "These are messages where the user is asking for help with any aspect of mathematics — arithmetic, algebra, statistics, or mathematical reasoning. The user may ask for a calculation or explanation. The request should be for the LLM to calculate or explain — not to recommend calculators or explain how to calculate. The LLM's response would be the calculation or explanation — not instructions or advice."
+  "Data Analysis": "These are messages where the user has data they want analysed, visualised, or interpreted — CSV, JSON, a table, or raw numbers. The user may provide the data or ask for help with a specific analysis. The request should be for the LLM to analyse — not to recommend analysis tools or explain how to analyse. The LLM's response would be the analysis — not instructions or advice."
+  "Diagrams": "These are messages where the user wants a diagram, flowchart, chart, or visual representation of a system or process. The user may ask for a specific type of diagram or describe the system. The request should be for the LLM to generate — not to recommend diagram tools or explain how to create diagrams. The LLM's response would be the diagram — not instructions or advice."
+  "Travel Planning": "These are messages where the user is planning a trip — flights, hotels, itineraries, destinations, things to do. The user may ask for suggestions or help with a specific aspect of the trip. The request should be for the LLM to plan — not to recommend travel tools or explain how to plan. The LLM's response would be the plan — not instructions or advice."
+  "Thinking": "These are messages where the user wants Leo to think through something carefully and methodically — a complex problem, a multi-step question, or a decision requiring structured reasoning. The user may ask for a step-by-step approach or want to explore different angles. The request should be for the LLM to think — not to recommend thinking tools or explain how to think. The LLM's response would be the reasoning — not instructions or advice."
+  "Weather": "These are messages where the user is asking about the weather — current conditions, forecasts, or climate for a location. The user may specify the location or ask for a specific type of weather. The request should be for the LLM to provide weather — not to recommend weather tools or explain how to check the weather. The LLM's response would be the weather — not instructions or advice."
+  "Finance": "These are messages where the user is asking about money — currency conversion, stock prices, crypto, exchange rates, financial data. The user may ask for a specific financial figure or want to understand a financial concept. The request should be for the LLM to provide financial information — not to recommend financial tools or explain how to manage money. The LLM's response would be the financial information — not instructions or advice."
+  "News": "These are messages where the user is asking about current events, recent news, or what's happening in the world. The user may ask for a specific news story or want to know about a topic. The request should be for the LLM to provide news — not to recommend news tools or explain how to find news. The LLM's response would be the news — not instructions or advice."
+  "Sports": "These are messages where the user is asking about sports — scores, fixtures, standings, results, or sports news. The user may ask for a specific game or want to know about a team. The request should be for the LLM to provide sports information — not to recommend sports tools or explain how to follow sports. The LLM's response would be the sports information — not instructions or advice."
+  "Time-critical": "These are messages where the request is urgent or time-sensitive — the user needs a fast answer, not a thorough one. The user may explicitly state urgency or imply it through the context. The request should be for a quick response — not to recommend fast tools or explain how to be fast. The LLM's response would be a quick answer — not a detailed explanation."
+  "Browser": "These are messages where the user wants Leo to take actions in the browser — clicking, filling forms, navigating pages. The user may ask for help with a specific browser task or want to know how to do something in the browser. The request should be for the LLM to perform browser actions — not to recommend browser tools or explain how to use the browser. The LLM's response would be the browser action — not instructions or advice."
+generation:
+  num_primary_topics: 5
+  num_topics: 10
+  messages_per_topic: 30
+  max_messages: null
+  continuous: false
+  resume: true
+concurrency:
+  max_concurrent: 5
+  max_concurrent_primary: 2
+rate_limiting:
+  llm_calls_per_minute: 60
+  search_calls_per_minute: 30
+output:
+  file: "androcles_chat_dataset"
+logging:
+  verbose: false

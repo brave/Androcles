@@ -1,0 +1,5 @@
+[tool.pytest.ini_options]
+testpaths = ["train/tests"]
+markers = [
+    "integration: needs a trained or Hub model; pass --model-path (see train/tests/conftest.py)",
+]
