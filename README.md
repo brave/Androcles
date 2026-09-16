@@ -12,7 +12,7 @@ Androcles 2 is a fine-tuned [ModernBERT](https://huggingface.co/answerdotai/Mode
 
 | Artifact | Hugging Face |
 |---|---|
-| Dataset | [`bravesoftware/androcles-2-chat-50k`](https://huggingface.co/datasets/bravesoftware/androcles-2-chat-50k) |
+| Dataset | [`bravesoftware/diverse-llm-prompts-34k`]([https://huggingface.co/datasets/bravesoftware/androcles-2-chat-50k](https://huggingface.co/datasets/bravesoftware/diverse-llm-prompts-34k)) + labelled data from [`LMSYS/lmsys-chat-1m`](https://huggingface.co/datasets/lmsys/lmsys-chat-1m)| 
 | Model | [`bravesoftware/Androcles-2`](https://huggingface.co/bravesoftware/Androcles-2) |
 
 
