@@ -16,7 +16,7 @@ pip install -r train/requirements.txt
 
 ## Train
 
-The training CSV needs a `message` column and one binary column per label:
+The training CSV needs a `message` column and one binary column per label. See the repo root README: download [`bravesoftware/diverse-llm-prompts-34k`](https://huggingface.co/datasets/bravesoftware/diverse-llm-prompts-34k), run the multilabel labeller, then point `--train_file` at the labelled CSV.
 
 ```bash
 python train.py \
