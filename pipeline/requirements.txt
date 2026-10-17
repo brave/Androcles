@@ -30,11 +30,11 @@ attrs==26.1.0
     #   aiohttp
     #   jsonschema
     #   referencing
-boto3==1.43.108
+boto3==1.43.111
     # via
     #   -r pipeline/requirements.in
     #   langchain-aws
-botocore==1.43.108
+botocore==1.43.111
     # via
     #   boto3
     #   s3transfer
