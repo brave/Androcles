@@ -435,7 +435,7 @@ urllib3==2.8.0
     # via
     #   botocore
     #   requests
-uuid-utils==0.17.1
+uuid-utils==1.2.0
     # via
     #   langchain-core
     #   langsmith
