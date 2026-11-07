@@ -115,7 +115,7 @@ httpx2==2.13.1
     # via
     #   langsmith
     #   openai
-huggingface-hub==1.33.0
+huggingface-hub==2.4.0
     # via
     #   accelerate
     #   datasets
